@@ -1,0 +1,7 @@
+*.out
+*.swp
+*.o
+*.a
+rush-02
+compile_commands.json
+.cache/
