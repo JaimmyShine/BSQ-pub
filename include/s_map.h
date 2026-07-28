@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   s_map.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/28 19:54:44 by jcayuela         ###   ########.fr       */
+/*   Created: 2026/07/28 19:58:17 by jcayuela          #+#    #+#             */
+/*   Updated: 2026/07/28 20:02:44 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utils.h"
+#ifndef S_MAP_H
+# define S_MAP_H
 
-int	main(int argc, char *argv[])
+typedef struct s_map
 {
-	(void)argc;
-	(void)argv;
-	ft_putstr("hello\n");
-	return (0);
-}
+	int		lines;
+	char	empty;
+	char	obstacle;
+	char	fill;
+	char	**content;
+}	t_map;
+
+#endif

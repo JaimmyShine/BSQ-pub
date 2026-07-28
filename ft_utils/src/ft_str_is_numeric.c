@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/28 19:54:44 by jcayuela         ###   ########.fr       */
+/*   Created: 2026/07/11 11:35:39 by jcayuela          #+#    #+#             */
+/*   Updated: 2026/07/28 20:13:29 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utils.h"
-
-int	main(int argc, char *argv[])
+int	ft_str_is_numeric(char *str)
 {
-	(void)argc;
-	(void)argv;
-	ft_putstr("hello\n");
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < '0' || str[i] > '9')
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }

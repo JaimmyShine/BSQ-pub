@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_reader.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/28 19:54:44 by jcayuela         ###   ########.fr       */
+/*   Created: 2026/07/28 20:00:08 by jcayuela          #+#    #+#             */
+/*   Updated: 2026/07/28 20:06:05 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utils.h"
+#ifndef MAP_READER_H
+# define MAP_READER_H
+# include "s_map.h"
 
-int	main(int argc, char *argv[])
-{
-	(void)argc;
-	(void)argv;
-	ft_putstr("hello\n");
-	return (0);
-}
+void	get_map_data(t_map *map, char *line);
+void	parse_map(t_map *map, char *buf);
+
+#endif

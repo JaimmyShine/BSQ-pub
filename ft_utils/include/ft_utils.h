@@ -6,7 +6,7 @@
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 13:46:37 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/26 16:57:58 by jcayuela         ###   ########.fr       */
+/*   Updated: 2026/07/28 20:13:44 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_puterr(char *str);
 
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strlen(char *str);
+int		ft_atoi(char *str);
+int		ft_str_is_numeric(char *str);
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strdup(char	*src);
