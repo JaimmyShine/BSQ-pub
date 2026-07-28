@@ -2,6 +2,7 @@
 *.swp
 *.o
 *.a
-rush-02
+*.txt
+bsq
 compile_commands.json
 .cache/
