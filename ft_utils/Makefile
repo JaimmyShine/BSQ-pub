@@ -17,7 +17,8 @@ SRC = ft_putchar.c \
 	  ft_strdup.c \
 	  ft_strncpy.c \
 	  ft_atoi.c \
-	  ft_str_is_numeric.c
+	  ft_str_is_numeric.c \
+	  ft_str_is_printable.c
 
 SRCPATH = $(SRC:%=$(SRC_DIR)/%)
 
