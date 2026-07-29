@@ -11,7 +11,9 @@ SRC_DIR = src
 SRC = main.c \
 	  bsq.c \
 	  map_reader.c \
-	  map_reader2.c
+	  map_reader2.c \
+	  ft_helper_solve.c \
+	  find_square.c
 
 SRCPATH = $(SRC:%=$(SRC_DIR)/%)
 

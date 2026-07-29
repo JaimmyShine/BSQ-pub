@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_reader2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jcayuela <jcayuela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 23:20:54 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/29 11:56:56 by jcayuela         ###   ########.fr       */
+/*   Updated: 2026/07/29 15:36:20 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,3 +14,15 @@
 #include "map_reader.h"
 #include "ft_utils.h"
 
+void	free_split_lines(char **sl)
+{
+	int	i;
+
+	i = 0;
+	while (sl[i] != NULL)
+	{
+		free(sl[i]);
+		i++;
+	}
+	free(sl);
+}

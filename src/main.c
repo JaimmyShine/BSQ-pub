@@ -6,7 +6,7 @@
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/29 11:58:02 by jcayuela         ###   ########.fr       */
+/*   Updated: 2026/07/29 16:58:49 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		//stdin
+		bsq(-1);
 	}
 	i = 1;
 	while (i < argc)
@@ -33,10 +33,10 @@ int	main(int argc, char *argv[])
 			ft_putstr("map error\n");
 		else
 			bsq(fd);
+		if (i < argc - 1)
+			ft_putchar('\n');
 		close(fd);
 		i++;
 	}
-	(void)argv;
-	ft_putstr("hello\n");
 	return (0);
 }

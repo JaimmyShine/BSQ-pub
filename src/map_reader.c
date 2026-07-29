@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_reader.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jcayuela <jcayuela@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 20:04:14 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/29 13:21:04 by jcayuela         ###   ########.fr       */
+/*   Updated: 2026/07/29 15:04:18 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ int	get_map_data(t_map *map, char *line)
 	ft_strncpy(n_of_lines, line, line_len - 3);
 	n_of_lines[line_len - 3] = '\0';
 	if (!ft_str_is_numeric(n_of_lines))
+	{
+		free(n_of_lines);
 		return (-1);
+	}
 	map->rows = ft_atoi(n_of_lines);
 	map->empty = line[line_len - 3];
 	map->obstacle = line[line_len - 2];
@@ -92,14 +95,15 @@ int	parse_map(t_map *map, char *buf)
 		return (-1);
 	if (get_map_data(map, lines[0]))
 	{
-		free(lines);
+		free_split_lines(lines);
 		return (-1);
 	}
 	if (get_map_content(map, lines + 1))
 	{
-		free(lines);
+		free_split_lines(lines);
 		return (-1);
 	}
+	free_split_lines(lines);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/28 20:00:08 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/28 23:44:50 by jcayuela         ###   ########.fr       */
+/*   Updated: 2026/07/29 14:58:09 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int		parse_map(t_map *map, char *buf);
 
 char	**split_lines(char *buf);
 int		check_map_is_valid(char *buf);
+void	free_split_lines(char **sl);
 
 #endif
