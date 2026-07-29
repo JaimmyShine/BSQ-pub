@@ -2,13 +2,16 @@ NAME = bsq
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
 
 INCLUDE = -Iinclude -Ift_utils/include
 
 SRC_DIR = src
 
-SRC = main.c
+SRC = main.c \
+	  bsq.c \
+	  map_reader.c \
+	  map_reader2.c
 
 SRCPATH = $(SRC:%=$(SRC_DIR)/%)
 

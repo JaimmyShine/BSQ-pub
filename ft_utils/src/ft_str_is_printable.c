@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/29 11:58:02 by jcayuela         ###   ########.fr       */
+/*   Created: 2026/07/11 11:47:56 by jcayuela          #+#    #+#             */
+/*   Updated: 2026/07/28 23:38:02 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <unistd.h>
-#include "ft_utils.h"
-
-int	bsq(int fd);
-
-int	main(int argc, char *argv[])
+int	ft_str_is_printable(char *str)
 {
-	int	fd;
 	int	i;
 
-	if (argc < 2)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		//stdin
-	}
-	i = 1;
-	while (i < argc)
-	{
-		fd = open(argv[i], O_RDONLY);
-		if (fd == -1)
-			ft_putstr("map error\n");
-		else
-			bsq(fd);
-		close(fd);
+		if (str[i] < 32 || str[i] > 126)
+			return (0);
 		i++;
 	}
-	(void)argv;
-	ft_putstr("hello\n");
-	return (0);
+	return (1);
 }

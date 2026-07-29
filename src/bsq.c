@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   bsq.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/29 11:58:02 by jcayuela         ###   ########.fr       */
+/*   Created: 2026/07/29 11:46:17 by jcayuela          #+#    #+#             */
+/*   Updated: 2026/07/29 13:17:16 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
 #include <unistd.h>
 #include "ft_utils.h"
+#include "map_reader.h"
 
-int	bsq(int fd);
-
-int	main(int argc, char *argv[])
+int	bsq(int fd)
 {
-	int	fd;
-	int	i;
+	t_map	map;
+	char	buffer[4096];
+	int		size;
+	int		i;
 
-	if (argc < 2)
+	size = read(fd, buffer, 4096);
+	if (size < 0)
+		return (-1);
+	if (parse_map(&map, buffer))
 	{
-		//stdin
+		ft_putstr("map error\n");
+		return (-1);
 	}
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (i < map.rows)
 	{
-		fd = open(argv[i], O_RDONLY);
-		if (fd == -1)
-			ft_putstr("map error\n");
-		else
-			bsq(fd);
-		close(fd);
+		ft_putstr(map.content[i]);
+		ft_putchar('\n');
 		i++;
 	}
-	(void)argv;
-	ft_putstr("hello\n");
 	return (0);
 }
