@@ -1,42 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_reader2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcayuela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/28 19:44:36 by jcayuela          #+#    #+#             */
-/*   Updated: 2026/07/29 11:58:02 by jcayuela         ###   ########.fr       */
+/*   Created: 2026/07/28 23:20:54 by jcayuela          #+#    #+#             */
+/*   Updated: 2026/07/29 11:56:56 by jcayuela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <unistd.h>
+#include <stdlib.h>
+#include "map_reader.h"
 #include "ft_utils.h"
 
-int	bsq(int fd);
-
-int	main(int argc, char *argv[])
-{
-	int	fd;
-	int	i;
-
-	if (argc < 2)
-	{
-		//stdin
-	}
-	i = 1;
-	while (i < argc)
-	{
-		fd = open(argv[i], O_RDONLY);
-		if (fd == -1)
-			ft_putstr("map error\n");
-		else
-			bsq(fd);
-		close(fd);
-		i++;
-	}
-	(void)argv;
-	ft_putstr("hello\n");
-	return (0);
-}
